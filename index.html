@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Европейские ВУЗы — тех/мед (DE/IT/PL)</title>
+  <meta name="description" content="Агрегатор технических и медицинских вузов Германии, Италии и Польши. Демоверсия." />
+  <style>
+    :root{--bg:#0b1020;--panel:#0e162b;--muted:#9ca3af;--text:#e5e7eb;--accent:#60a5fa;}
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#0b1020,#0e162b);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto}
+    header{position:sticky;top:0;z-index:10;background:rgba(14,22,43,.9);backdrop-filter:blur(8px);border-bottom:1px solid #1f2937}
+    .wrap{max-width:1200px;margin:0 auto;padding:16px}
+    h1{margin:6px 0 2px;font-size:22px}
+    p.sub{margin:0;color:var(--muted);font-size:14px}
+    .controls{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    input[type="search"],select{background:#0b1324;border:1px solid #1f2937;color:var(--text);padding:10px 12px;border-radius:10px;min-width:160px}
+    .card{background:#0b1324;border:1px solid #1f2937;border-radius:14px;padding:14px;margin:16px 0}
+    table{width:100%;border-collapse:separate;border-spacing:0}
+    thead th{position:sticky;top:138px;background:#0b1324;border-bottom:1px solid #1f2937;padding:12px;text-align:left;font-weight:600;font-size:14px}
+    tbody td{border-bottom:1px dashed #1f2937;padding:12px;vertical-align:top;font-size:14px}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid #1f2937;background:#0a1328;color:#cbd5e1}
+    .pill{display:inline-block;padding:2px 8px;border-radius:8px;font-size:12px;margin-left:6px;border:1px solid #1f2937;color:#e5e7eb}
+    .muted{color:var(--muted)} .nowrap{white-space:nowrap}
+    footer{color:#94a3b8;font-size:12px;margin:12px 0 40px}
+    @media (max-width:800px){
+      thead{display:none}
+      table,tbody,tr,td{display:block;width:100%}
+      tbody tr{border:1px solid #1f2937;border-radius:12px;margin:10px 0;padding:6px;background:#0b1324}
+      tbody td{border:0;padding:8px}
+      tbody td::before{content:attr(data-label) ": ";font-weight:600;color:#93c5fd}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Европейские ВУЗы — тех/мед (DE/IT/PL)</h1>
+    <p class="sub">Демоверсия. Данные загружаются из <code>data.json</code> (в этом же репозитории). Для актуализации — просто меняй файл <code>data.json</code>.</p>
+    <div class="controls">
+      <input id="q" type="search" placeholder="Поиск: университет, город…" />
+      <select id="country">
+        <option value="">Все страны</option>
+        <option>Germany</option>
+        <option>Italy</option>
+        <option>Poland</option>
+      </select>
+      <select id="focus">
+        <option value="">Все направления</option>
+        <option>Technical</option>
+        <option>Medical</option>
+      </select>
+      <select id="type">
+        <option value="">Все типы</option>
+        <option>Public</option>
+        <option>Private</option>
+      </select>
+      <select id="sort">
+        <option value="name">Сортировка: Университет</option>
+        <option value="city">Сортировка: Город</option>
+        <option value="focus">Сортировка: Направление</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="card">
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th>Университет</th>
+          <th>Страна / город</th>
+          <th>Направление</th>
+          <th>Тип</th>
+          <th>Сайт</th>
+          <th>Заметка</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <footer>Подсказка: на iPhone нажми «Поделиться» → «На экран Домой», чтобы открыть как приложение.</footer>
+  </div>
+</main>
+
+<script>
+const tbody = document.querySelector("#tbl tbody");
+const q = document.getElementById("q");
+const selCountry = document.getElementById("country");
+const selFocus = document.getElementById("focus");
+const selType = document.getElementById("type");
+const sortSel = document.getElementById("sort");
+
+let data = [];
+
+async function loadData(){
+  try{
+    const res = await fetch('data.json', {cache: 'no-store'});
+    data = await res.json();
+    applyFilters();
+  }catch(e){
+    tbody.innerHTML = '<tr><td colspan="6">Не удалось загрузить data.json. Проверь, что файл лежит рядом с index.html и сайт открыт по HTTPS/с диска.</td></tr>';
+  }
+}
+
+function render(rows){
+  tbody.innerHTML = "";
+  rows.forEach(row => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td data-label="Университет"><strong>${row.name}</strong></td>
+      <td data-label="Страна / город">${row.country} <span class="pill">${row.city}</span></td>
+      <td data-label="Направление"><span class="badge">${row.focus}</span></td>
+      <td data-label="Тип">${row.type}</td>
+      <td data-label="Сайт"><a href="${row.link}" target="_blank" rel="noopener">Открыть</a></td>
+      <td data-label="Заметка">${row.note||""}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function applyFilters(){
+  const term = q.value.toLowerCase().trim();
+  let rows = data.filter(r =>
+    (!selCountry.value || r.country === selCountry.value) &&
+    (!selFocus.value || r.focus === selFocus.value) &&
+    (!selType.value || r.type === selType.value) &&
+    (r.name.toLowerCase().includes(term) || r.city.toLowerCase().includes(term) || r.country.toLowerCase().includes(term))
+  );
+  const key = sortSel.value;
+  rows.sort((a,b)=>{
+    if(key==="city"){ return a.city.localeCompare(b.city) || a.name.localeCompare(b.name); }
+    if(key==="focus"){ return a.focus.localeCompare(b.focus) || a.name.localeCompare(b.name); }
+    return a.name.localeCompare(b.name);
+  });
+  render(rows);
+}
+
+[q, selCountry, selFocus, selType, sortSel].forEach(el => el.addEventListener("input", applyFilters));
+loadData();
+</script>
+</body>
+</html>

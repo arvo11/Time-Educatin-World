@@ -1,0 +1,272 @@
+[
+  {
+    "name": "Ruhr-Universität Bochum (RUB)",
+    "country": "Germany",
+    "city": "Bochum",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://www.ruhr-uni-bochum.de",
+    "note": "Медицина и инженерия."
+  },
+  {
+    "name": "Technische Universität Dortmund",
+    "country": "Germany",
+    "city": "Dortmund",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://www.tu-dortmund.de",
+    "note": "Инженерия и ИТ."
+  },
+  {
+    "name": "RWTH Aachen University",
+    "country": "Germany",
+    "city": "Aachen",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://www.rwth-aachen.de",
+    "note": "Топ тех-вуз."
+  },
+  {
+    "name": "Universität Duisburg-Essen",
+    "country": "Germany",
+    "city": "Duisburg/Essen",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.uni-due.de",
+    "note": "Мед кампус в Эссене."
+  },
+  {
+    "name": "Heinrich-Heine-Universität Düsseldorf",
+    "country": "Germany",
+    "city": "Düsseldorf",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.hhu.de",
+    "note": "Медицина, клиника."
+  },
+  {
+    "name": "Universität zu Köln",
+    "country": "Germany",
+    "city": "Köln",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.uni-koeln.de",
+    "note": "Крупный гос. вуз."
+  },
+  {
+    "name": "Universität Bonn",
+    "country": "Germany",
+    "city": "Bonn",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.uni-bonn.de",
+    "note": "Медицинский факультет."
+  },
+  {
+    "name": "WWU Münster",
+    "country": "Germany",
+    "city": "Münster",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.uni-muenster.de",
+    "note": "Клиники UKM."
+  },
+  {
+    "name": "Universität Witten/Herdecke",
+    "country": "Germany",
+    "city": "Witten",
+    "focus": "Medical",
+    "type": "Private",
+    "link": "https://www.uni-wh.de",
+    "note": "Частный мед. вуз."
+  },
+  {
+    "name": "MHB – Theodor Fontane",
+    "country": "Germany",
+    "city": "Neuruppin",
+    "focus": "Medical",
+    "type": "Private",
+    "link": "https://www.mhb-fontane.de",
+    "note": "Частный мед. вуз."
+  },
+  {
+    "name": "Sapienza Università di Roma",
+    "country": "Italy",
+    "city": "Rome",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.uniroma1.it",
+    "note": "Медицина и инженерия."
+  },
+  {
+    "name": "Università di Bologna",
+    "country": "Italy",
+    "city": "Bologna",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.unibo.it",
+    "note": "Сильные мед/тех."
+  },
+  {
+    "name": "Università degli Studi di Padova",
+    "country": "Italy",
+    "city": "Padua",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.unipd.it",
+    "note": "Исследовательский профиль."
+  },
+  {
+    "name": "Università degli Studi di Milano (Statale)",
+    "country": "Italy",
+    "city": "Milan",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.unimi.it",
+    "note": "Гос. медицина."
+  },
+  {
+    "name": "Università di Pisa",
+    "country": "Italy",
+    "city": "Pisa",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.unipi.it",
+    "note": "Мед и инженерия."
+  },
+  {
+    "name": "Università di Torino",
+    "country": "Italy",
+    "city": "Turin",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.unito.it",
+    "note": "Мед; связка с Polito."
+  },
+  {
+    "name": "Università di Napoli Federico II",
+    "country": "Italy",
+    "city": "Naples",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.unina.it",
+    "note": "Крупный гос. вуз."
+  },
+  {
+    "name": "Politecnico di Milano",
+    "country": "Italy",
+    "city": "Milan",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://www.polimi.it",
+    "note": "Топ тех."
+  },
+  {
+    "name": "Politecnico di Torino",
+    "country": "Italy",
+    "city": "Turin",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://www.polito.it",
+    "note": "Инженерия/ИТ."
+  },
+  {
+    "name": "Università di Firenze",
+    "country": "Italy",
+    "city": "Florence",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://www.unifi.it",
+    "note": "Мед и инженерия."
+  },
+  {
+    "name": "Warsaw University of Technology",
+    "country": "Poland",
+    "city": "Warsaw",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://www.pw.edu.pl",
+    "note": "Крупнейший тех."
+  },
+  {
+    "name": "AGH University of Krakow",
+    "country": "Poland",
+    "city": "Kraków",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://www.agh.edu.pl",
+    "note": "Инженерия и ИТ."
+  },
+  {
+    "name": "Wrocław University of Science and Technology",
+    "country": "Poland",
+    "city": "Wrocław",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://pwr.edu.pl",
+    "note": "Сильные инженерные."
+  },
+  {
+    "name": "Gdańsk University of Technology",
+    "country": "Poland",
+    "city": "Gdańsk",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://pg.edu.pl",
+    "note": "Кораблестроение/ИТ."
+  },
+  {
+    "name": "Silesian University of Technology",
+    "country": "Poland",
+    "city": "Gliwice",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://www.polsl.pl",
+    "note": "Прикладные науки."
+  },
+  {
+    "name": "Poznań University of Technology",
+    "country": "Poland",
+    "city": "Poznań",
+    "focus": "Technical",
+    "type": "Public",
+    "link": "https://put.poznan.pl",
+    "note": "ИТ/инженерия."
+  },
+  {
+    "name": "Jagiellonian University — Collegium Medicum",
+    "country": "Poland",
+    "city": "Kraków",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://cm-uj.krakow.pl",
+    "note": "Мед. подразделение UJ."
+  },
+  {
+    "name": "Warsaw Medical University (WUM)",
+    "country": "Poland",
+    "city": "Warsaw",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://wum.edu.pl",
+    "note": "Гос. мед. университет."
+  },
+  {
+    "name": "Medical University of Gdańsk (MUG)",
+    "country": "Poland",
+    "city": "Gdańsk",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://mug.edu.pl",
+    "note": "Медицинский гос. вуз."
+  },
+  {
+    "name": "Poznan University of Medical Sciences (PUMS)",
+    "country": "Poland",
+    "city": "Poznań",
+    "focus": "Medical",
+    "type": "Public",
+    "link": "https://pums.ump.edu.pl",
+    "note": "Гос. мед. университет."
+  }
+]
